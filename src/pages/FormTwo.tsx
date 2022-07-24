@@ -1,5 +1,7 @@
+import AppLayout from '@components/AppLayout'
+
 const FormTwo = () => {
-	return <div>FormTwo</div>
+	return <AppLayout>FormTwo</AppLayout>
 }
 
 export default FormTwo

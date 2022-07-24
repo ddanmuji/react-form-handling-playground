@@ -51,7 +51,7 @@ const FormOne = () => {
 				{({
 					values,
 					errors,
-					// touched,
+					touched,
 					handleChange,
 					// handleBlur,
 					handleSubmit
@@ -66,7 +66,9 @@ const FormOne = () => {
 								onChange={handleChange}
 								label={labelData[0]}
 							/>
-							{errors.email && <ErrorMsg>{errors.email}</ErrorMsg>}
+							{errors.email && touched.email && (
+								<ErrorMsg>{errors.email}</ErrorMsg>
+							)}
 						</div>
 						<div>
 							<Input
@@ -76,7 +78,9 @@ const FormOne = () => {
 								onChange={handleChange}
 								label={labelData[1]}
 							/>
-							{errors.nickname && <ErrorMsg>{errors.nickname}</ErrorMsg>}
+							{errors.nickname && touched.nickname && (
+								<ErrorMsg>{errors.nickname}</ErrorMsg>
+							)}
 						</div>
 						<div>
 							<Input
@@ -86,7 +90,9 @@ const FormOne = () => {
 								onChange={handleChange}
 								label={labelData[2]}
 							/>
-							{errors.password && <ErrorMsg>{errors.password}</ErrorMsg>}
+							{errors.password && touched.password && (
+								<ErrorMsg>{errors.password}</ErrorMsg>
+							)}
 						</div>
 						<div>
 							<Input
@@ -96,7 +102,7 @@ const FormOne = () => {
 								onChange={handleChange}
 								label={labelData[3]}
 							/>
-							{errors.passwordCheck && (
+							{errors.passwordCheck && touched.passwordCheck && (
 								<ErrorMsg>{errors.passwordCheck}</ErrorMsg>
 							)}
 						</div>

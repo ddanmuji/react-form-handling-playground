@@ -1,5 +1,7 @@
+import AppLayout from '@components/AppLayout'
+
 const FormThree = () => {
-	return <div>FormThree</div>
+	return <AppLayout>FormThree</AppLayout>
 }
 
 export default FormThree
