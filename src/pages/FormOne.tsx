@@ -1,9 +1,11 @@
 import { Formik } from 'formik'
+import styled from 'styled-components'
+
 import AppLayout from '@components/AppLayout'
 import Button from '@components/ui/Button'
 import Form from '@components/ui/Form'
 import Input from '@components/ui/Input'
-import { ErrorMsg } from '@components/ui/Form.styled'
+import colors from '@styles/colors'
 
 const labelData = [
 	{ key: 'email', name: '이메일' },
@@ -113,5 +115,10 @@ const FormOne = () => {
 		</AppLayout>
 	)
 }
+
+const ErrorMsg = styled.span`
+	color: ${colors.danger};
+	font-size: 14px;
+`
 
 export default FormOne
