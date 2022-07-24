@@ -1,9 +1,9 @@
 import { Formik } from 'formik'
 import AppLayout from '@components/AppLayout'
-import Button from '@components/Button'
-import Form from '@components/Form'
-import Input from '@components/Input'
-import { ErrorMsg } from '@components/Form.styled'
+import Button from '@components/ui/Button'
+import Form from '@components/ui/Form'
+import Input from '@components/ui/Input'
+import { ErrorMsg } from '@components/ui/Form.styled'
 
 const labelData = [
 	{ key: 'email', name: '이메일' },
