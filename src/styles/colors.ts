@@ -1,7 +1,8 @@
 export default {
-	primary: '#8e44ad',
-	secondary: '#9b59b6',
+	primary: '#16a085',
+	secondary: '#1abc9c',
 	textColor: '#2f3640',
+	descriptColor: '#565656',
 	bgColor: '#f5f6fa',
 	lineColor: '#dfe6e9',
 	white: '#fff',

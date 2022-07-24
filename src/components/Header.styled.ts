@@ -27,7 +27,7 @@ export const HeaderNavGuorp = styled.nav`
 	gap: 20px;
 `
 
-export const HeaderNavItem = styled(Link)<{ active: boolean }>`
+export const HeaderNavItem = styled(Link)<{ active?: number }>`
 	font-size: 16px;
 	transition: all 0.15s ease-in-out;
 	color: ${({ active }) => (active ? colors.primary : colors.textColor)};

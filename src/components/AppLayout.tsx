@@ -1,12 +1,16 @@
 import { FC, ReactNode } from 'react'
-import { AppLayoutContainer } from './AppLayout.styled'
+import { AppLayoutContainer, AppLayoutTitle } from './AppLayout.styled'
 
 interface AppLayoutProps {
 	children: ReactNode
+	title: string
 }
 
-const AppLayout: FC<AppLayoutProps> = ({ children }) => (
-	<AppLayoutContainer>{children}</AppLayoutContainer>
+const AppLayout: FC<AppLayoutProps> = ({ children, title }) => (
+	<AppLayoutContainer>
+		<AppLayoutTitle>{title}</AppLayoutTitle>
+		{children}
+	</AppLayoutContainer>
 )
 
 export default AppLayout

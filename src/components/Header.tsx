@@ -20,7 +20,11 @@ const Header = () => {
 			<HeaderTitle to="/">Formik-Practice</HeaderTitle>
 			<HeaderNavGuorp>
 				{linkDatas.map(({ id, name, to }) => (
-					<HeaderNavItem key={id} to={to} active={pathname === to}>
+					<HeaderNavItem
+						key={id}
+						to={to}
+						active={pathname === to ? 1 : undefined}
+					>
 						{name}
 					</HeaderNavItem>
 				))}
