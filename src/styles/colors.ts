@@ -1,6 +1,6 @@
 export default {
-	primary: '#16a085',
-	secondary: '#1abc9c',
+	primary: '#7158e2',
+	secondary: '#7d5fff',
 	danger: '#e74c3c',
 	textColor: '#2f3640',
 	descriptColor: '#565656',

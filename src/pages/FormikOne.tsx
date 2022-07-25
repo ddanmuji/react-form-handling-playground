@@ -1,4 +1,4 @@
-import { useFormik } from 'formik'
+import { Formik } from 'formik'
 import * as Yup from 'yup'
 
 import { SIGNUP_LABAL_DATAS } from '@src/staticData'
@@ -36,57 +36,81 @@ const FormikOne = () => {
 		console.log('submit!', data)
 	}
 
-	const { errors, touched, isSubmitting, getFieldProps, handleSubmit } =
-		useFormik({ initialValues, validationSchema, onSubmit })
-
 	return (
 		<AppLayout title="회원가입 데모 with formik &#38; yup">
-			<Form onSubmit={handleSubmit}>
-				<div>
-					<Input
-						type="email"
-						label={SIGNUP_LABAL_DATAS[0]}
-						// value={formik.values.email}
-						// onChange={formik.handleChange}
-						// onBlur={formik.handleBlur}
-						{...getFieldProps('email')}
-					/>
-					{errors.email && touched.email && <ErrorMsg>{errors.email}</ErrorMsg>}
-				</div>
-				<div>
-					<Input
-						type="text"
-						label={SIGNUP_LABAL_DATAS[1]}
-						{...getFieldProps('nickname')}
-					/>
-					{errors.nickname && touched.nickname && (
-						<ErrorMsg>{errors.nickname}</ErrorMsg>
-					)}
-				</div>
-				<div>
-					<Input
-						type="password"
-						label={SIGNUP_LABAL_DATAS[2]}
-						{...getFieldProps('password')}
-					/>
-					{errors.password && touched.password && (
-						<ErrorMsg>{errors.password}</ErrorMsg>
-					)}
-				</div>
-				<div>
-					<Input
-						type="password"
-						label={SIGNUP_LABAL_DATAS[3]}
-						{...getFieldProps('passwordCheck')}
-					/>
-					{errors.passwordCheck && touched.passwordCheck && (
-						<ErrorMsg>{errors.passwordCheck}</ErrorMsg>
-					)}
-				</div>
-				<Button type="submit" disabled={isSubmitting}>
-					회원가입
-				</Button>
-			</Form>
+			<Formik
+				initialValues={initialValues}
+				onSubmit={onSubmit}
+				validationSchema={validationSchema}
+			>
+				{({
+					values,
+					errors,
+					touched,
+					handleChange,
+					handleBlur,
+					handleSubmit,
+					isSubmitting
+				}) => (
+					<Form onSubmit={handleSubmit}>
+						<div>
+							<Input
+								type="email"
+								label={SIGNUP_LABAL_DATAS[0]}
+								name="email"
+								value={values.email}
+								onChange={handleChange}
+								onBlur={handleBlur}
+							/>
+							{errors.email && touched.email && (
+								<ErrorMsg>{errors.email}</ErrorMsg>
+							)}
+						</div>
+						<div>
+							<Input
+								type="text"
+								label={SIGNUP_LABAL_DATAS[1]}
+								name="nickname"
+								value={values.nickname}
+								onChange={handleChange}
+								onBlur={handleBlur}
+							/>
+							{errors.nickname && touched.nickname && (
+								<ErrorMsg>{errors.nickname}</ErrorMsg>
+							)}
+						</div>
+						<div>
+							<Input
+								type="password"
+								label={SIGNUP_LABAL_DATAS[2]}
+								name="password"
+								value={values.password}
+								onChange={handleChange}
+								onBlur={handleBlur}
+							/>
+							{errors.password && touched.password && (
+								<ErrorMsg>{errors.password}</ErrorMsg>
+							)}
+						</div>
+						<div>
+							<Input
+								type="password"
+								label={SIGNUP_LABAL_DATAS[3]}
+								name="passwordCheck"
+								value={values.passwordCheck}
+								onChange={handleChange}
+								onBlur={handleBlur}
+							/>
+							{errors.passwordCheck && touched.passwordCheck && (
+								<ErrorMsg>{errors.passwordCheck}</ErrorMsg>
+							)}
+						</div>
+						<Button type="submit" disabled={isSubmitting}>
+							회원가입
+						</Button>
+					</Form>
+				)}
+			</Formik>
 		</AppLayout>
 	)
 }

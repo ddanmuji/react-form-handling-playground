@@ -4,6 +4,7 @@ import { PathTo } from './staticData'
 
 const FormikOne = lazy(() => import('@pages/FormikOne'))
 const FormikTwo = lazy(() => import('@pages/FormikTwo'))
+const FormikThree = lazy(() => import('@pages/FormikThree'))
 const ReactHookForm = lazy(() => import('@pages/ReactHookForm'))
 
 const RouterConfig = () => {
@@ -11,6 +12,7 @@ const RouterConfig = () => {
 		{ path: PathTo.Home, element: <Navigate to={PathTo.FormikOne} /> },
 		{ path: PathTo.FormikOne, element: <FormikOne /> },
 		{ path: PathTo.FormikTwo, element: <FormikTwo /> },
+		{ path: PathTo.FormikThree, element: <FormikThree /> },
 		{ path: PathTo.ReactHookForm, element: <ReactHookForm /> }
 	])
 
