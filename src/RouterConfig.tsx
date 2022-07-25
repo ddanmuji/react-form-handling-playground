@@ -1,15 +1,17 @@
 import { lazy } from 'react'
-import { useRoutes } from 'react-router-dom'
+import { useRoutes, Navigate } from 'react-router-dom'
+import { PathTo } from './staticData'
 
-const FormOne = lazy(() => import('@pages/FormOne'))
-const FormTwo = lazy(() => import('@pages/FormTwo'))
-const FormThree = lazy(() => import('@pages/FormThree'))
+const FormikOne = lazy(() => import('@pages/FormikOne'))
+const FormikTwo = lazy(() => import('@pages/FormikTwo'))
+const ReactHookForm = lazy(() => import('@pages/ReactHookForm'))
 
 const RouterConfig = () => {
 	const routes = useRoutes([
-		{ path: '/', element: <FormOne /> },
-		{ path: '/two', element: <FormTwo /> },
-		{ path: '/three', element: <FormThree /> }
+		{ path: PathTo.Home, element: <Navigate to={PathTo.FormikOne} /> },
+		{ path: PathTo.FormikOne, element: <FormikOne /> },
+		{ path: PathTo.FormikTwo, element: <FormikTwo /> },
+		{ path: PathTo.ReactHookForm, element: <ReactHookForm /> }
 	])
 
 	return routes

@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom'
+import { NAV_DATAS } from '@src/staticData'
 import {
 	HeaderContainer,
 	HeaderNavGuorp,
@@ -6,20 +7,14 @@ import {
 	HeaderTitle
 } from './Header.styled'
 
-const linkDatas = [
-	{ id: 1, to: '/', name: 'Form One' },
-	{ id: 2, to: '/two', name: 'Form Two' },
-	{ id: 3, to: '/three', name: 'Form Three' }
-] as const
-
 const Header = () => {
 	const { pathname } = useLocation()
 
 	return (
 		<HeaderContainer>
-			<HeaderTitle to="/">Formik-Practice</HeaderTitle>
+			<HeaderTitle to="/">React Form Handling Practice</HeaderTitle>
 			<HeaderNavGuorp>
-				{linkDatas.map(({ id, name, to }) => (
+				{NAV_DATAS.map(({ id, name, to }) => (
 					<HeaderNavItem
 						key={id}
 						to={to}
