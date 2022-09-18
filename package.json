@@ -1,7 +1,6 @@
 {
-	"name": "react-vite",
+	"name": "react-form-handling-playground",
 	"private": true,
-	"version": "0.0.0",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
@@ -11,11 +10,12 @@
 	"lint-staged": {
 		"*.{ts,tsx}": [
 			"eslint --fix",
-			"prettier --write",
-			"git add"
+			"prettier --write"
 		]
 	},
 	"dependencies": {
+		"@with-me/style": "^0.3.0",
+		"@with-me/ui": "^0.3.1",
 		"formik": "^2.2.9",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
