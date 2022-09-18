@@ -2,7 +2,7 @@
 
 - 리액트 form 핸들링 연습 레포지토리
 
-> 🖥 [DEMO](https://react-form-handling-practice.netlify.app/) - netlify deploy
+> 🖥 [DEMO](https://jebong-react-form-playground.netlify.app/) - netlify deploy
 
 <br />
 
